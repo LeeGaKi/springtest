@@ -28,6 +28,8 @@ public class BookController {
     @PostMapping("/")
     @ApiOperation("2书籍")
     public boolean addBook(Books books){
+        System.out.println(123345);
+        System.out.println(123345);
         return booksService.save(books);
     }
     @PutMapping("/")

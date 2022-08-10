@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="icu.lijiaqi.springtest.mapper.BookMapper">
+    <insert id="addBook">
+        insert into study.books(bookId, bookName, bookAuthor, bookPress, bookStock)
+        values
+    (#{bookId},#{bookName},#{bookAuthor},#{bookPress},#{bookStock})
+    </insert>
+    <update id="upBook">
+        update study.books set bookName=#{bookName},bookAuthor=#{bookAuthor},
+                               bookPress=#{bookPress},bookStock=#{bookStock}
+        where bookId = #{bookId}
+    </update>
+    <delete id="delBook">
+        delete  from study.books where bookId=#{id}
+    </delete>
+
+    <select id="getBook" resultType="icu.lijiaqi.springtest.pojo.Book">
+        select *
+        from study.books;
+    </select>
+
+</mapper>

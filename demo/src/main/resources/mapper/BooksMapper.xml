@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="icu.lijiaqi.springtest.mapper.BooksMapper">
+
+    <resultMap id="BaseResultMap" type="icu.lijiaqi.springtest.pojo.Books">
+            <id property="bookid" column="bookId" jdbcType="INTEGER"/>
+            <result property="bookname" column="bookName" jdbcType="VARCHAR"/>
+            <result property="bookauthor" column="bookAuthor" jdbcType="VARCHAR"/>
+            <result property="bookpress" column="bookPress" jdbcType="VARCHAR"/>
+            <result property="bookstock" column="bookStock" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        bookId,bookName,bookAuthor,
+        bookPress,bookStock
+    </sql>
+    <select id="getBookBypage" resultType="icu.lijiaqi.springtest.pojo.Books">
+        select * from study.books
+    </select>
+</mapper>
